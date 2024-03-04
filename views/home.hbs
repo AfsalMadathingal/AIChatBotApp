@@ -197,6 +197,10 @@ chatOpen.forEach((chat) => {
                 responseArea.appendChild(newMsgContainer);
 
                sendButton.style.display = 'inline-block';
+               const chatBox = document.querySelector('.chat-box');
+
+// Scroll to the bottom of the chat-box div
+                chatBox.scrollTop = chatBox.scrollHeight;
 
             })
 

@@ -279,7 +279,7 @@ body
   padding: 0 15px;
   border-radius: 10px;
   border: 1px solid rgb(63, 63, 63);
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
@@ -410,6 +410,7 @@ body
 .responsearea{
 
   width: 65%;
+  margin-bottom: 25px;
 }
 
 .icon {
