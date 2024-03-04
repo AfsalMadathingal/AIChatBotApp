@@ -43,6 +43,10 @@ const signup = async (req, res) => {
 
         const {fullName, email, password} = req.body;
 
+        const userExists = await userDB.findOne({email});
+
+        if (userExists) return res.json({success:false});
+
         const user = new userDB({
             name: fullName,
             email,
