@@ -14,4 +14,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    chatLimit:{
+        type: Number,
+        default: 0
+    }
 });
+
+
+module.exports = mongoose.model("users", userSchema)

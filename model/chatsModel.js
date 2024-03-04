@@ -6,9 +6,15 @@ const chatSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
     },
     message: {
-        type: String,
-        required: true,
+        type: Array,
+       
     },
+    date:{
+        type: Date,
+        default: Date.now
+    }
 
 
 });
+
+module.exports = mongoose.model("chats", chatSchema)

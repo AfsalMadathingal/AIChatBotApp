@@ -1,24 +1,13 @@
 const express = require("express");
 const homeRoute = express();
+const homeController = require("../controller/homeController");
+const auth = require("../middleware/auth");
 
 
 
 
-homeRoute.get("/", (req, res) => {
-
-
-    try {
-        
-        return res.render("home");
-
-    } catch (error) {
-
-        console.log(error);
-        res.send("Internal Error Occured");
-        
-    }
-
-})
+homeRoute.get("/", auth.checkSession, homeController.loadHome)
+homeRoute.get("/chats/:id",auth.checkSession, homeController.loadChats)
 
 
 
