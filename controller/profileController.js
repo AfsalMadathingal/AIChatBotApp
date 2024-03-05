@@ -72,10 +72,10 @@ const verify = async (req, res) => {
         const {email, password} = req.body;
         const user = await userDB.findOne({email});
         console.log("user",user);
-
+        if (!user) return res.json({success:false});
         const {_id} = user;
      
-        if (!user) return res.json({success:false});
+        
 
         if(user.password === password) 
         {
